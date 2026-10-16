@@ -1,0 +1,29 @@
+[
+  {
+    "stage": "framework_AdamW",
+    "epochs": 5000,
+    "lr": 0.0002,
+    "weight_decay": 0,
+    "eps": 1e-10,
+    "best_objective": 0.00243599471192885,
+    "seconds": 14.192408199989586
+  },
+  {
+    "stage": "framework_finish",
+    "optimizer": "AdamW",
+    "calls": 0,
+    "iterations": 0,
+    "cap": 0,
+    "gradient_max": 3.511387697433139e-07,
+    "seconds": 0.003106299991486594
+  },
+  {
+    "stage": "density_AdamW",
+    "epochs": 5000,
+    "lr": 2e-05,
+    "eps": 1e-10,
+    "weight_decay": 0,
+    "constraint": "Euclidean projection onto unit simplex after each step",
+    "seconds": 11.021919399994658
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "raw_measurements": "data/FHdata.xlsx",
+  "all_observed_points": "data/observed.csv",
+  "saved_h1_start": "reference/starting_h1",
+  "H1_reference": "reference/stages/S1_H1_pure_mse",
+  "stages": {
+    "Replacement": "reference/stages/S2_C_replacement",
+    "Density fit": "reference/stages/S3_C_density_only",
+    "Framework fit": "reference/stages/S4_C_framework_only",
+    "Density continuation": "reference/stages/extended_normalized/S3_C_density_refined",
+    "Framework AdamW": "reference/stages/extended_raw_from_normalized_adamw/S1_C_extended_AdamW",
+    "Final density": "reference/stages/extended_raw_from_normalized_adamw/S3_C_density_refined"
+  },
+  "final_continuous": "reference/stages/extended_raw_from_normalized_adamw/S3_C_density_refined",
+  "final_coefficients": "reference/tables/final_coefficients.csv",
+  "current_data_role": "All 644 measured points at retarding voltages 0, 4, 6, and 8 V are fitted; saved stages are not experimental repeats.",
+  "figure_backend": "R",
+  "scientific_scope": "Conditional probability density of effective excitation energies under the IID successive-collision model; discrete 4s reference energies are compared after fitting."
+}

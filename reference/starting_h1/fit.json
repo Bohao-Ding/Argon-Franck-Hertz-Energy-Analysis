@@ -1,0 +1,187 @@
+{
+  "name": "R5_selected_full",
+  "spec": {
+    "family": "H1",
+    "excitation": 12.09,
+    "knot_step": 0.1,
+    "step": 0.025
+  },
+  "initialization": "full-data refit of R1_H1_train",
+  "fit_points": 644,
+  "initial_distribution": {
+    "mean_eV": 11.521750447221365,
+    "sd_eV": 0.0,
+    "response_sd_V": 2.082012210189235,
+    "phase_V": -1.9035029761285633,
+    "phase_beta": 0.42399242632835965,
+    "mode_eV": 11.521750447221365
+  },
+  "distribution": {
+    "mean_eV": 11.639176202467233,
+    "sd_eV": 0.0,
+    "response_sd_V": 2.173270969506304,
+    "phase_V": -1.3447864457575784,
+    "phase_beta": 0.4475028249533559,
+    "mode_eV": 11.639176202467233
+  },
+  "objective": 0.0006330550944509449,
+  "data_mse": 0.000417223136178995,
+  "shared_gradient_max": 6.095071948388153e-08,
+  "simplex_kkt": null,
+  "solvers": [
+    {
+      "stage": "H1_lbfgs",
+      "iterations": 0,
+      "cap": 400
+    }
+  ],
+  "raw_parameter_values": {
+    "raw_E1": 0.2485443502664566,
+    "raw_dE": [],
+    "raw_level_logits": [
+      0.0
+    ],
+    "raw_amp": 0.16898515286072047,
+    "raw_offset": -0.14734180183299303,
+    "raw_v_emit": -7.922617551846005,
+    "raw_power": -0.9479677725271608,
+    "raw_osc_amp": -0.7949298620223999,
+    "raw_width": -0.3850928571075197,
+    "raw_damping": -18.56641512237422,
+    "raw_phase": -0.45600294843452577,
+    "raw_vr_scale": -9.896802324475173,
+    "raw_slope": -0.6487318003121515,
+    "raw_collector_threshold": 0.9506196555835593,
+    "raw_collector_width": -22.89383933410375,
+    "raw_collector_floor": -9.956796761262062,
+    "raw_vr_contrast": 3.811753532422975,
+    "raw_late_contrast": 1.329669351734807,
+    "raw_vr_late_contrast": 1.8781635433615211,
+    "raw_late_onset": -12.517046893499419,
+    "raw_late_width": -1.9264007244471875,
+    "raw_high_energy_loss_strength": -11.7230390073849,
+    "raw_high_energy_loss_onset": 1.276840149596253,
+    "raw_high_energy_loss_width": 2.9180975752502905,
+    "raw_vr_late_baseline": 0.6347866856309877,
+    "raw_curve_gain": [
+      7.8927251728825905,
+      -0.16091506322261717,
+      -0.3705668151032888,
+      -9.217350353861834
+    ],
+    "raw_curve_bias": [
+      0.3296229238746571,
+      0.2066909007484337,
+      -0.7720901816837679,
+      -11.84690491926309
+    ],
+    "raw_curve_dva": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "spectral_mu": -0.5021941599592343,
+    "raw_phase_vr": 0.963146840712694,
+    "raw_osc_strength": 1.4862289769289383
+  },
+  "history": [
+    {
+      "stage": "initial",
+      "calls": 1,
+      "objective": 0.0007890176167579165,
+      "data_mse": 0.0005812311099334639
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 100,
+      "objective": 0.0006426080782010363,
+      "data_mse": 0.0004271442114874715
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 200,
+      "objective": 0.00063490720463236,
+      "data_mse": 0.0004170497402924677
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 300,
+      "objective": 0.0006339268985414909,
+      "data_mse": 0.0004155404730911726
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 400,
+      "objective": 0.0006336351216070899,
+      "data_mse": 0.00041526733161468627
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 500,
+      "objective": 0.0006334559526223336,
+      "data_mse": 0.00041506758138588705
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 600,
+      "objective": 0.0006333442421701382,
+      "data_mse": 0.00041492352991006996
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 700,
+      "objective": 0.0006332734251626997,
+      "data_mse": 0.00041487428353808106
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 800,
+      "objective": 0.0006332234079501872,
+      "data_mse": 0.0004149477350972211
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 900,
+      "objective": 0.0006331813523915986,
+      "data_mse": 0.0004151576978020773
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1000,
+      "objective": 0.0006331417687288267,
+      "data_mse": 0.00041550391053423846
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1100,
+      "objective": 0.000633105883649285,
+      "data_mse": 0.0004159572334995064
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1200,
+      "objective": 0.0006330788613247512,
+      "data_mse": 0.00041643865529946377
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1300,
+      "objective": 0.0006330636786630936,
+      "data_mse": 0.00041683727486730755
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1400,
+      "objective": 0.0006330573966254102,
+      "data_mse": 0.0004170908678089797
+    },
+    {
+      "stage": "H1_adam",
+      "calls": 1500,
+      "objective": 0.0006330551086586934,
+      "data_mse": 0.00041722225900116754
+    }
+  ],
+  "seconds": 8.602541400003247
+}

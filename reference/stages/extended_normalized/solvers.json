@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "framework_Adam",
+    "epochs": 5000,
+    "lr": 0.0002,
+    "best_objective": 0.0003695485672140015,
+    "seconds": 13.853014200009056
+  },
+  {
+    "stage": "framework_LBFGS",
+    "calls": 1,
+    "iterations": 1,
+    "cap": 1000,
+    "gradient_max": 1.6538383945316873e-09,
+    "seconds": 0.005831299989949912
+  },
+  {
+    "stage": "density_SLSQP",
+    "calls": 9,
+    "iterations": 6,
+    "cap": 400,
+    "success": true,
+    "message": "Optimization terminated successfully",
+    "seconds": 0.02271400000608992
+  }
+]
