@@ -1,28 +1,13 @@
-# Keep frozen receipt bytes and their file SHA-256 unchanged on checkout.
-source_data_package/research_evidence/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-
-# Reproduce the exact source-byte hashes used by the spectral run on any host.
-src/sublevel_detect/spectral_models.py text eol=lf
-src/sublevel_detect/spectral_pipeline.py text eol=lf
-src/sublevel_detect/model.py text eol=crlf
-src/sublevel_detect/validation_common.py text eol=crlf
-src/sublevel_detect/validation_holdout.py text eol=crlf
-source_data_package/spectral_evidence_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-
-scripts/summarize_spectral_concentration.py text eol=lf
-src/sublevel_detect/affine_readout.py text eol=lf
-scripts/audit_affine_calibration.py text eol=lf
-source_data_package/calibration_audit_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-source_data_package/calibration_reference_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-
-# Revised inference has its own byte identities and parameter-only evidence.
-src/sublevel_detect/spectral_revision.py text eol=lf
-src/sublevel_detect/spectral_revision_pipeline.py text eol=lf
-scripts/run_spectral_revision_pilot.py text eol=lf
-scripts/run_spectral_matched_recovery.py text eol=lf
-scripts/run_spectral_phase_comparison.py text eol=lf
-scripts/analyze_spectral_revision.py text eol=lf
-scripts/build_spectral_revision_evidence.py text eol=lf
-scripts/replay_spectral_revision.py text eol=lf
-scripts/plot_spectral_revision.R text eol=lf
-source_data_package/spectral_revision_evidence/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+* text=auto
+*.py text eol=lf
+*.R text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+*.cmd text eol=crlf
+*.pt binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.tiff binary
