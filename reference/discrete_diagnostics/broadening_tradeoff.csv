@@ -1,0 +1,7 @@
+domain,family,points,response_variance_slope,intercept_V2,R2,note
+wide,H2,6,-4.966906064391472,4.6152985648143865,0.9999998869605528,"Regression of fitted settings, not experimental replicates."
+wide,H4,6,-4.948585132188024,4.615222105871498,0.9999983536862703,"Regression of fitted settings, not experimental replicates."
+wide,uniform,6,-4.94405801787371,4.615253599517024,0.9999983249445504,"Regression of fitted settings, not experimental replicates."
+narrow,H2,6,-4.879397984982581,4.61481133740757,0.9999533666474936,"Regression of fitted settings, not experimental replicates."
+narrow,H4,5,-4.962363209083848,4.615310224279025,0.9999994140805741,"Regression of fitted settings, not experimental replicates."
+narrow,uniform,5,-4.379286034742121,4.613710352782214,0.9960864354210712,"Regression of fitted settings, not experimental replicates."

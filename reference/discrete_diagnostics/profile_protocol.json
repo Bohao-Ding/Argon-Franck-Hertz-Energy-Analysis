@@ -1,0 +1,26 @@
+{
+  "candidates": 160,
+  "feasible": 150,
+  "maximum_workers": 16,
+  "threads_per_fit": 1,
+  "updates_per_path": 12000,
+  "maximum_updates": 1920000,
+  "planned_feasible_updates": 1800000,
+  "sds_eV": [
+    0.0,
+    0.03,
+    0.06,
+    0.1,
+    0.15,
+    0.25
+  ],
+  "objective": "training-only per-curve range normalized MSE",
+  "optimizer": "AdamW",
+  "learning_rate": 0.0002,
+  "weight_decay": 0,
+  "eps": 1e-10,
+  "dtype": "float64",
+  "stages": "three cycles: mean 2000 -> external 2000",
+  "selection": "training objective only; holdout evaluation follows selection",
+  "stopping": "fixed budget, no automatic extension; failures retained without blind retry"
+}

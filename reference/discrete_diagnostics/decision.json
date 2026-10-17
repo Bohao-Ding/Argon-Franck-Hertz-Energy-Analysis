@@ -1,0 +1,13 @@
+{
+  "conditional_simulation_retraining": "not_started",
+  "reasons": [
+    "Both full-data training selections prefer zero variance.",
+    "One wide-domain fold selects positive SD for all three shapes; it does not improve pooled prediction.",
+    "Matched-moment discrete and uniform responses are close, with negative pooled residual alignment after local compensation.",
+    "Larger narrow-domain holdout gains have a mean/prior and framework alternative; collapse improves them further.",
+    "All paths still improve training loss while endpoint prediction deteriorates; more training is not evidence of levels."
+  ],
+  "scientific_conclusion": "No resolved discrete-level count in this archive and model protocol; nominal K is nonidentifiable when duplicate energies and zero weights are allowed.",
+  "limitation": "No universal claim that physically separated excited levels are absent or unobservable.",
+  "analysis_cycles_used": 3
+}

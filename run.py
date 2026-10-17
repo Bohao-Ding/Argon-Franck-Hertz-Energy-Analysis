@@ -1,4 +1,4 @@
-"""Choose a manuscript reproduction task without command-line arguments."""
+"""Choose a project reproduction task without command-line arguments."""
 from datetime import datetime
 from importlib.util import find_spec
 import os
@@ -14,21 +14,22 @@ PYTHON_PACKAGES = ("numpy", "pandas", "scipy", "torch", "openpyxl")
 def main() -> int:
     print("Argon Franck-Hertz Energy Analysis")
     print("1. Replay saved parameters and calculate distribution summaries")
-    print("2. Render manuscript figures with R/ggplot2")
+    print("2. Render saved-result and project figures with R/ggplot2")
     print("3. Continue the adopted fitting sequence from the saved H1 starting parameters")
+    print("4. Replay discrete diagnostics and fixed-framework probes; no optimization")
     print("0. Exit")
     while True:
         try:
-            choice = input("Choose a mode [0-3]: ").strip()
+            choice = input("Choose a mode [0-4]: ").strip()
         except EOFError:
             return 0
-        if choice in ("0", "1", "2", "3"):
+        if choice in ("0", "1", "2", "3", "4"):
             break
-        print("Enter 0, 1, 2, or 3.")
+        print("Enter 0, 1, 2, 3, or 4.")
     if choice == "0":
         return 0
 
-    if choice in ("1", "3"):
+    if choice in ("1", "3", "4"):
         missing = [name for name in PYTHON_PACKAGES if find_spec(name) is None]
         if missing:
             print("Missing Python packages: " + ", ".join(missing))
@@ -36,13 +37,17 @@ def main() -> int:
             return 1
         for name in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"):
             os.environ[name] = "1"
-        from fh_argon.workflows import replay, refit
-        action = replay if choice == "1" else refit
+        if choice == "4":
+            from fh_argon.diagnostics import replay_diagnostics
+            action = replay_diagnostics
+        else:
+            from fh_argon.workflows import replay, refit
+            action = replay if choice == "1" else refit
     else:
         from fh_argon.plotting import PlottingError, render
         action = render
 
-    mode = {"1": "replay", "2": "figures", "3": "refit"}[choice]
+    mode = {"1": "replay", "2": "figures", "3": "refit", "4": "diagnostics"}[choice]
     output = ROOT / "outputs" / f"{datetime.now():%Y%m%d_%H%M%S_%f}_{mode}"
     print("Output: " + output.relative_to(ROOT).as_posix())
     if choice == "2":

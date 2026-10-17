@@ -1,0 +1,455 @@
+{
+  "training_performed": false,
+  "optimization_steps": 0,
+  "model_sources": "parameters/scan_{domain}_H1.json and parameters/scan_{domain}_H4.json",
+  "points": 644,
+  "probe_sd_eV": 0.1,
+  "maximum_external_parameter_change": 0.0,
+  "shapes": [
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "point",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641912645606697
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "H2_probe",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.009999999999999929,
+      "kappa4_eV4": -0.00019999999999999716,
+      "energies_eV": [
+        11.541912645606697,
+        11.741912645606696
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "H4_probe",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.010000000000000096,
+      "kappa4_eV4": -0.0001360000000000026,
+      "energies_eV": [
+        11.507748566956709,
+        11.5971912860567,
+        11.686634005156693,
+        11.776076724256685
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "uniform_probe",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.010000000000000002,
+      "kappa4_eV4": -0.0001200000000000001,
+      "energies_eV": [
+        11.468707564849808,
+        11.815117726363585
+      ],
+      "weights": "continuous uniform density"
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "learned_H4",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641720850614025,
+        11.641720850614025,
+        11.641720850614025,
+        11.641720850614025
+      ],
+      "weights": [
+        0.2509831123947633,
+        0.24962612235213968,
+        0.24935629308314133,
+        0.2500344721699557
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "learned_H4_mean",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641720850614025
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H1",
+      "channel": "learned_H1",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641912645606697
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "point",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641720850614025
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "H2_probe",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.009999999999999929,
+      "kappa4_eV4": -0.00019999999999999716,
+      "energies_eV": [
+        11.541720850614025,
+        11.741720850614024
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "H4_probe",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.010000000000000096,
+      "kappa4_eV4": -0.0001360000000000026,
+      "energies_eV": [
+        11.507556771964037,
+        11.596999491064029,
+        11.68644221016402,
+        11.775884929264013
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "uniform_probe",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.010000000000000002,
+      "kappa4_eV4": -0.0001200000000000001,
+      "energies_eV": [
+        11.468515769857136,
+        11.814925931370913
+      ],
+      "weights": "continuous uniform density"
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "learned_H4",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641720850614025,
+        11.641720850614025,
+        11.641720850614025,
+        11.641720850614025
+      ],
+      "weights": [
+        0.2509831123947633,
+        0.24962612235213968,
+        0.24935629308314133,
+        0.2500344721699557
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "learned_H4_mean",
+      "mean_eV": 11.641720850614025,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641720850614025
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "wide",
+      "framework": "H4",
+      "channel": "learned_H1",
+      "mean_eV": 11.641912645606697,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641912645606697
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "point",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.64189519755287
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "H2_probe",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.009999999999999929,
+      "kappa4_eV4": -0.00019999999999999716,
+      "energies_eV": [
+        11.54189519755287,
+        11.74189519755287
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "H4_probe",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.010000000000000096,
+      "kappa4_eV4": -0.0001360000000000026,
+      "energies_eV": [
+        11.507731118902882,
+        11.597173838002874,
+        11.686616557102866,
+        11.776059276202858
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "uniform_probe",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.010000000000000002,
+      "kappa4_eV4": -0.0001200000000000001,
+      "energies_eV": [
+        11.468690116795981,
+        11.815100278309759
+      ],
+      "weights": "continuous uniform density"
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "learned_H4",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 3.1554436208840472e-30,
+      "kappa4_eV4": -1.9913648889155653e-59,
+      "energies_eV": [
+        11.641738712611863,
+        11.641738712611863,
+        11.641738712611863,
+        11.641738712611863
+      ],
+      "weights": [
+        0.24969838895846172,
+        0.24925594961009362,
+        0.2497842168475161,
+        0.2512614445839286
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "learned_H4_mean",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641738712611865
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H1",
+      "channel": "learned_H1",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.64189519755287
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "point",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641738712611865
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "H2_probe",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.009999999999999929,
+      "kappa4_eV4": -0.00019999999999999716,
+      "energies_eV": [
+        11.541738712611865,
+        11.741738712611864
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "H4_probe",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.010000000000000096,
+      "kappa4_eV4": -0.0001360000000000026,
+      "energies_eV": [
+        11.507574633961877,
+        11.597017353061869,
+        11.68646007216186,
+        11.775902791261853
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "uniform_probe",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.010000000000000002,
+      "kappa4_eV4": -0.0001200000000000001,
+      "energies_eV": [
+        11.468533631854976,
+        11.814943793368753
+      ],
+      "weights": "continuous uniform density"
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "learned_H4",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 3.1554436208840472e-30,
+      "kappa4_eV4": -1.9913648889155653e-59,
+      "energies_eV": [
+        11.641738712611863,
+        11.641738712611863,
+        11.641738712611863,
+        11.641738712611863
+      ],
+      "weights": [
+        0.24969838895846172,
+        0.24925594961009362,
+        0.2497842168475161,
+        0.2512614445839286
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "learned_H4_mean",
+      "mean_eV": 11.641738712611865,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.641738712611865
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "domain": "narrow",
+      "framework": "H4",
+      "channel": "learned_H1",
+      "mean_eV": 11.64189519755287,
+      "variance_eV2": 0.0,
+      "kappa4_eV4": 0.0,
+      "energies_eV": [
+        11.64189519755287
+      ],
+      "weights": [
+        1.0
+      ]
+    }
+  ],
+  "inference_scope": "Shared external parameters; equal moments for shape comparisons; full-data descriptive inference."
+}

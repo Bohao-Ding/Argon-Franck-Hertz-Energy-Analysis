@@ -1,0 +1,257 @@
+{
+  "data": "data/FHdata.xlsx",
+  "points": 644,
+  "retarding_voltages_V": [
+    0,
+    4,
+    6,
+    8
+  ],
+  "domains_eV": {
+    "wide": [
+      9,
+      16
+    ],
+    "narrow": [
+      11.4,
+      12
+    ]
+  },
+  "narrow_domain_role": "Strong support prior",
+  "dtype": "float64 after the original float32 workbook conversion",
+  "scan_paths": 540,
+  "matched_control_paths": 10,
+  "profile_feasible_paths": 150,
+  "profile_infeasible_candidates": 10,
+  "optimization_status": "Budget ended while training objectives were still improving; no automatic continuation",
+  "models": [
+    {
+      "model_id": "scan_wide_H1",
+      "kind": "scan",
+      "domain": "wide",
+      "parameters": "parameters/scan_wide_H1.json"
+    },
+    {
+      "model_id": "scan_wide_H4",
+      "kind": "scan",
+      "domain": "wide",
+      "parameters": "parameters/scan_wide_H4.json"
+    },
+    {
+      "model_id": "scan_narrow_H1",
+      "kind": "scan",
+      "domain": "narrow",
+      "parameters": "parameters/scan_narrow_H1.json"
+    },
+    {
+      "model_id": "scan_narrow_H4",
+      "kind": "scan",
+      "domain": "narrow",
+      "parameters": "parameters/scan_narrow_H4.json"
+    },
+    {
+      "model_id": "profile_wide_H1_sd0.00",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H1_sd0.00.json"
+    },
+    {
+      "model_id": "profile_wide_H2_sd0.03",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H2_sd0.03.json"
+    },
+    {
+      "model_id": "profile_wide_H2_sd0.06",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H2_sd0.06.json"
+    },
+    {
+      "model_id": "profile_wide_H2_sd0.10",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H2_sd0.10.json"
+    },
+    {
+      "model_id": "profile_wide_H2_sd0.15",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H2_sd0.15.json"
+    },
+    {
+      "model_id": "profile_wide_H2_sd0.25",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H2_sd0.25.json"
+    },
+    {
+      "model_id": "profile_wide_H4_sd0.03",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H4_sd0.03.json"
+    },
+    {
+      "model_id": "profile_wide_H4_sd0.06",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H4_sd0.06.json"
+    },
+    {
+      "model_id": "profile_wide_H4_sd0.10",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H4_sd0.10.json"
+    },
+    {
+      "model_id": "profile_wide_H4_sd0.15",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H4_sd0.15.json"
+    },
+    {
+      "model_id": "profile_wide_H4_sd0.25",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_H4_sd0.25.json"
+    },
+    {
+      "model_id": "profile_wide_uniform_sd0.03",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_uniform_sd0.03.json"
+    },
+    {
+      "model_id": "profile_wide_uniform_sd0.06",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_uniform_sd0.06.json"
+    },
+    {
+      "model_id": "profile_wide_uniform_sd0.10",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_uniform_sd0.10.json"
+    },
+    {
+      "model_id": "profile_wide_uniform_sd0.15",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_uniform_sd0.15.json"
+    },
+    {
+      "model_id": "profile_wide_uniform_sd0.25",
+      "kind": "profile",
+      "domain": "wide",
+      "parameters": "parameters/profile_wide_uniform_sd0.25.json"
+    },
+    {
+      "model_id": "profile_narrow_H1_sd0.00",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H1_sd0.00.json"
+    },
+    {
+      "model_id": "profile_narrow_H2_sd0.03",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H2_sd0.03.json"
+    },
+    {
+      "model_id": "profile_narrow_H2_sd0.06",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H2_sd0.06.json"
+    },
+    {
+      "model_id": "profile_narrow_H2_sd0.10",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H2_sd0.10.json"
+    },
+    {
+      "model_id": "profile_narrow_H2_sd0.15",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H2_sd0.15.json"
+    },
+    {
+      "model_id": "profile_narrow_H2_sd0.25",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H2_sd0.25.json"
+    },
+    {
+      "model_id": "profile_narrow_H4_sd0.03",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H4_sd0.03.json"
+    },
+    {
+      "model_id": "profile_narrow_H4_sd0.06",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H4_sd0.06.json"
+    },
+    {
+      "model_id": "profile_narrow_H4_sd0.10",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H4_sd0.10.json"
+    },
+    {
+      "model_id": "profile_narrow_H4_sd0.15",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_H4_sd0.15.json"
+    },
+    {
+      "model_id": "profile_narrow_uniform_sd0.03",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_uniform_sd0.03.json"
+    },
+    {
+      "model_id": "profile_narrow_uniform_sd0.06",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_uniform_sd0.06.json"
+    },
+    {
+      "model_id": "profile_narrow_uniform_sd0.10",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_uniform_sd0.10.json"
+    },
+    {
+      "model_id": "profile_narrow_uniform_sd0.15",
+      "kind": "profile",
+      "domain": "narrow",
+      "parameters": "parameters/profile_narrow_uniform_sd0.15.json"
+    }
+  ],
+  "coverage": "Forward replay of the 34 full-data models and fixed-framework probes. Fold and perturbation tables are saved computational records; their checkpoints and iteration histories are not included.",
+  "tables": [
+    "scan_scores.csv",
+    "scan_cv.csv",
+    "scan_levels.csv",
+    "scan_path_status.csv",
+    "noise_summary.csv",
+    "noise_window_stability.csv",
+    "matched_control_scores.csv",
+    "matched_control_cv.csv",
+    "probe_contrasts.csv",
+    "probe_summary.csv",
+    "profile_scores.csv",
+    "profile_selected.csv",
+    "profile_cv.csv",
+    "profile_path_status.csv",
+    "profile_candidates.csv",
+    "broadening_tradeoff.csv",
+    "collapse_decomposition.csv",
+    "shape_oof_summary.csv",
+    "decision.json",
+    "profile_protocol.json",
+    "probe_settings.json"
+  ]
+}
