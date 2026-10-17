@@ -8,11 +8,11 @@ The design changes the excitation representation while retaining a shared curren
 
 ```mermaid
 flowchart LR
-    D["Measured I–V curves"] --> A["Select 0 / 4 / 6 / 8 V\n644 points"]
+    D["Measured I-V curves"] --> A["Select 0, 4, 6, 8 V: 644 points"]
     S["Single effective energy"] --> P["Excitation characteristic function"]
     K["Weighted discrete energies"] --> P
     C["Normalized continuous density"] --> P
-    P --> N["Convolution powers\ncollision orders 1–16"]
+    P --> N["Convolution powers: collision orders 1 to 16"]
     N --> G["One unit-area Gaussian response"]
     G --> R["Shared current readout"]
     A --> R
