@@ -2,7 +2,7 @@
 
 The core activity uses atomic excitation, retarding fields, probability
 densities, and numerical integration. Convolutions and refitting are advanced
-extensions. The article's supplementary material gives the full derivations.
+extensions. See [model design](design.md) for the shared response and assumptions.
 
 ## 1. Predict a current signature
 
@@ -24,7 +24,9 @@ powers, the broadened response, the current modulation, and collection.
 Menu mode 1 replays H1 and the six adopted continuous-distribution stages.
 Identify fixed and updated parameters. Separate inherited features from
 quantities computed after fitting. Menu mode 2 redraws their current and
-energy-distribution figures without optimization.
+energy-distribution figures without optimization. Mode 4 adds the saved
+discrete-channel replay and equal-moment response probes; see
+[discrete diagnostics](discrete_diagnostics.md).
 
 ## 4. Calculate summaries and compare with spectroscopy
 

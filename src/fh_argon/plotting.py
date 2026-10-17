@@ -1,4 +1,4 @@
-"""Render the manuscript figures using the existing R sources and tables."""
+"""Render saved-result and project figures using R sources and tables."""
 import os
 from pathlib import Path
 import shutil
@@ -35,7 +35,7 @@ def _run(arguments: list[str]):
 
 
 def render(output: Path):
-    """Export Figures 1, 2, 3, and S1 without changing the saved source tables."""
+    """Export saved-result and web figures without changing source tables."""
     executable = _rscript()
     package_names = ",".join(f'"{name}"' for name in R_PACKAGES)
     expression = (
@@ -67,6 +67,7 @@ def render(output: Path):
     for script, source in (
         ("plot_data.R", ROOT / "data"),
         ("plot_results.R", tables),
+        ("plot_project.R", ROOT),
     ):
         result = _run([executable, "--vanilla", str(ROOT / "figures" / script),
                        str(source), str(figures)])
@@ -74,4 +75,5 @@ def render(output: Path):
             raise PlottingError(f"Figure export did not finish ({script}). "
                                 "Check the source tables and R package versions.")
     print("Exported Figures 1, 2, 3, and S1 as PDF, SVG, PNG, and TIFF.")
+    print("Exported project overview, response contrasts, and broadening tradeoff as PNG and SVG.")
     return {"figures_directory": "figures"}
