@@ -19,7 +19,7 @@
 - `spectrum_reference.csv`：最终激发能量分布统计量与四个 NIST 参考能量。
 - `SOURCE_MAP.json`：每个阶段和保存参数的对应关系。
 
-Windows 用户双击 `start.cmd`；也可从仓库目录运行 `python run.py`，然后选择模式：
+使用选定环境的 Python 解释器，从仓库目录运行 `python run.py`，然后选择模式：
 
 | 模式 | 操作 | 是否拟合参数 |
 |---|---|---|

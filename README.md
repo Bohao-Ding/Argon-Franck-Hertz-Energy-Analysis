@@ -18,8 +18,6 @@ Use an existing Python environment containing the packages in [requirements.txt]
 python run.py
 ```
 
-On Windows, `start.cmd` uses an existing repository `.venv` first, otherwise the Python available in the current environment.
-
 | Mode | What it does | Runs an optimizer? |
 | --- | --- | --- |
 | **1** | Replay H1 and six saved continuous-distribution stages; calculate currents and distribution summaries. | No |
@@ -28,9 +26,43 @@ On Windows, `start.cmd` uses an existing repository `.venv` first, otherwise the
 | **4** | Replay 34 discrete/fixed-variance full-data models and fixed-framework response probes. | No |
 | **0** | Exit. | No |
 
-Start with mode 1, then explore mode 4. Every selection writes a fresh `outputs/<timestamp>_<mode>/` directory. Inputs and saved references stay intact. Numerical modes use one CPU thread and float64; CUDA is not required. Nothing installs packages or downloads data automatically.
+Start with mode 1, then explore mode 4. Every selection writes a fresh `outputs/<timestamp>_<mode>/` directory. Inputs and saved references stay intact. Numerical modes use one CPU thread and float64; CUDA is not required. The menu does not install packages or download data.
 
 For R discovery, package checks, output filenames, and fitting details, see [Reproduction](docs/reproduction.md).
+
+## Reproduce with an AI agent
+
+Open this repository in a local AI coding agent and copy the instruction below. It guides the agent through inspecting your machine, preparing a compatible environment, and checking the saved results.
+
+```text
+Help me reproduce this repository locally, adapting each step to this machine.
+
+1. Read README.md, docs/reproduction.md, and requirements.txt. Inspect the OS,
+   available Python interpreters/environments, and installed package versions.
+   Check Rscript, its visible R libraries, Cairo, and fonts separately.
+2. Report the available environment and the minimal configuration needed.
+   Reuse a compatible environment first. If a new environment is necessary,
+   use an isolated project-local environment and leave global dependencies
+   intact. Prepare only missing dependencies within the current authorization;
+   do not replace an existing environment or install CUDA for this CPU workflow.
+3. Use the selected Python interpreter to run run.py and choose mode 1.
+   Inspect replay_checks.json and the distribution summaries. Compare the
+   recalculated currents with the saved values and explain any discrepancy.
+4. Choose mode 4 to replay the 34 full-data models and fixed-framework probes.
+   Inspect current/probe differences and unchanged parameters. Fold and
+   perturbation tables are saved records; this mode does not rerun their fits.
+5. Prepare R for mode 2, reusing an existing installation first. Add missing
+   R components or packages within the current authorization. Make Rscript
+   and its packages visible to the same process, using session configuration
+   where appropriate. Redraw and inspect the figures. If setup is blocked,
+   report the blocker and retain the completed Python replay results.
+6. Keep measured data, saved references, and source files unchanged. Use fresh
+   output directories. Run mode 3 only if I explicitly request a new fit and
+   we have agreed on its computational budget.
+7. Report interpreter/package versions, configuration changes, modes actually
+   run, output locations, and replay differences. Distinguish parameter replay,
+   figure redrawing, and fitting; none supplies new independent measurements.
+```
 
 ## Model design
 
