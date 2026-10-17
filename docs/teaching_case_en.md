@@ -24,8 +24,8 @@ powers, the broadened response, the current modulation, and collection.
 Menu mode 1 replays H1 and the six adopted continuous-distribution stages.
 Identify fixed and updated parameters. Separate inherited features from
 quantities computed after fitting. Menu mode 2 redraws their current and
-energy-distribution figures without optimization. Mode 4 adds the saved
-discrete-channel replay and equal-moment response probes; see
+energy-distribution figures. Mode 4 adds the saved discrete-channel replay
+and fixed-framework probes; see
 [discrete diagnostics](discrete_diagnostics.md).
 
 ## 4. Calculate summaries and compare with spectroscopy
@@ -39,13 +39,12 @@ interval probability, atomic population, and a parameter confidence interval.
 
 ## 5. Interpret the two widths
 
-Derive the n-times single-collision variance plus the common Gaussian
-variance along the voltage axis. Compare this with using the same random
+Express excitation losses as voltages. Derive n times the single-collision
+variance plus the common Gaussian variance. Compare this with using the same random
 excitation energy n times, which gives an n-squared dependence. Propose a
 measurement that helps distinguish energy spread and current broadening.
-Mode 3 reruns the adopted fitting sequence only when explicitly selected.
+Mode 3 continues the adopted fitting sequence.
 
-For the optional specified four-energy example, see `optional_h4s.md`.
+For the historical four-energy example, see [H4s comparison](optional_h4s.md).
 The final task is to link each interpretation to measured currents, model
-assumptions, or external spectroscopic knowledge. Classroom learning gains
-have not been measured in this project.
+assumptions, or external spectroscopic knowledge.

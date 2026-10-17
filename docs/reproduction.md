@@ -2,17 +2,17 @@
 
 [Project](../README.md) · [Design](design.md) · [Discrete diagnostics](discrete_diagnostics.md)
 
-Use a compatible Python environment. The menu does not install dependencies, create an environment, download inputs, or require CUDA. For step-by-step environment preparation with a local AI agent, see the [README instructions](../README.md#reproduce-with-an-ai-agent).
+Run modes **1 → 4 → 2** to replay the saved results and redraw the figures. The [AI-agent instructions](../README.md#reproduce-with-an-ai-agent) cover local environment setup.
 
 ## Python
 
-The numerical modes need NumPy, pandas, SciPy, PyTorch, and openpyxl. [requirements.txt](../requirements.txt) records the versions used for replay. Python 3.13.7 was used; the computation runs on CPU, so a PyTorch CUDA build suffix is not required.
+Use a compatible environment with NumPy, pandas, SciPy, PyTorch, and openpyxl. [requirements.txt](../requirements.txt) records the replay versions; Python 3.13.7 was used. Numerical calculations run on CPU.
 
-From the repository directory, run `python run.py` with the selected environment's interpreter. The repository can be moved: input paths resolve relative to its own location.
+From the repository directory, launch `python run.py` with the selected interpreter. Input paths resolve relative to the repository.
 
 ## R
 
-Mode 2 needs R, Cairo PDF support, and `ggplot2`, `patchwork`, `svglite`, and `ragg`. The Python launcher finds `Rscript` through `PATH`, or through an existing installation identified by `R_HOME`. An R user library must be visible to that same process, for example through the current session's `R_LIBS_USER`.
+Mode 2 needs `ggplot2`, `patchwork`, `svglite`, `ragg`, and Cairo PDF support. The launcher finds `Rscript` through `PATH` or `R_HOME`; `R_LIBS_USER` can expose an existing R user library to that process.
 
 Check the selected R environment with:
 
@@ -20,39 +20,33 @@ Check the selected R environment with:
 Rscript --vanilla -e 'print(vapply(c("ggplot2", "patchwork", "svglite", "ragg"), requireNamespace, logical(1), quietly=TRUE)); print(capabilities("cairo"))'
 ```
 
-Plots use Arial, with system font availability determining rendering. The project graphics are exported as PNG/SVG; the original saved-result figure scripts retain PDF/SVG/PNG/TIFF export. No font or package is installed automatically.
+Plots request Arial, with rendering determined by the system's available fonts. Project graphics export as PNG/SVG; saved-result figures export as PDF/SVG/PNG/TIFF. The menu reports missing dependencies before starting a selected mode.
 
-## Modes and output files
+## Modes and outputs
 
-Every selection writes to a fresh `outputs/<timestamp>_<mode>/` directory, which Git ignores.
+Each selection creates `outputs/<timestamp>_<mode>/`.
 
 | Mode | Outputs and scope |
 | --- | --- |
-| 1: replay | `replayed_currents.csv`, `distribution_summaries.csv`, `replay_checks.json`; H1 plus six continuous stages. |
-| 2: figures | `figures/`; the original data/current/distribution/stage figures plus `project_overview`, `response_contrasts`, and `broadening_tradeoff`. |
-| 3: refit | `stages/` and `refit.log`; continues the adopted fitting sequence from saved H1 parameters. |
-| 4: diagnostics | `diagnostic_currents.csv`, `distribution_summaries.csv`, `probe_summaries.csv`, `probe_contrasts.csv`, `replay_checks.json`; 34 full-data models and the fixed-framework probes. |
+| 1: replay | `replayed_currents.csv`, `distribution_summaries.csv`, `replay_checks.json`; H1 and six continuous stages. |
+| 2: figures | `figures/`; data, current, distribution, stage, and three project graphics. |
+| 3: refit | `stages/` and `refit.log`; the adopted alternating fit from saved H1 starting parameters. |
+| 4: diagnostics | `diagnostic_currents.csv`, `distribution_summaries.csv`, `probe_summaries.csv`, `probe_contrasts.csv`, `replay_checks.json`; 34 full-data models and controlled probes. |
 
-Mode 3 takes substantially longer. It continues a recorded starting point and update sequence; it is not a restart from arbitrary initial conditions or an independent experiment. This project-display update did not execute that optimization.
+Mode 3 runs the optimization sequence and takes longer than parameter replay. Mode 4 loads JSON parameters; fold, perturbation, and matched-budget results are supplied as summary tables.
 
-Mode 4 reads JSON parameters, so its curated supplement does not need binary checkpoints. Holdout and perturbation tables are saved records: their complete checkpoint histories are outside the curated package and cannot be rerun through mode 4.
+## Checking results
 
-## Numerical conventions and checking results
+Numerical calculations retain the original float32 workbook conversion before float64 evaluation. Replay reports current differences against saved predictions and changes in fixed parameters. Inspect these values alongside distribution summaries and exported figures.
 
-Calculations use one CPU thread and float64 after the retained workbook conversion. Compare replayed currents to the saved values and inspect the reported differences and unchanged parameters. Small floating-point differences can depend on the environment; a replay is a software consistency check, not a test of the physical model against a new experiment.
+The reported continuous peak uses the original 0.025 eV grid. R evaluates the same spline coefficients on a finer drawing grid. Stage summaries track initialization, density updates, and Gaussian response width.
 
-The reported continuous peak uses the original 0.025 eV calculation grid. The finer R plotting grid evaluates the same spline coefficients and does not redefine that reported peak. The main-workflow summaries retain the finite width introduced at initialization, later distribution changes, and Gaussian response width.
-
-If dependencies are missing, the selected mode stops with a message. Reuse an existing compatible installation first; prepare missing dependencies or an isolated project-local environment as needed within the current authorization. Partial outputs are retained if execution is interrupted.
-
-## Recreating committed preview assets
-
-Mode 2 produces the three previews inside its fresh output directory. A maintainer can copy the reviewed PNG/SVG files to `docs/assets/`; ordinary runs do not change those committed files. Their inputs and interpretation are listed in [asset provenance](assets/README.md).
+To refresh the committed previews, review the three PNG/SVG exports from mode 2 and copy them to `docs/assets/`. See [asset provenance](assets/README.md) for their source tables.
 
 ## 中文说明
 
-使用选定环境的 Python 解释器运行 `python run.py`。数值依赖和复算版本见 `requirements.txt`。绘图需要实际 Rscript 进程可见的四个 R 包、Cairo 和可用字体，可通过当前会话的 `R_HOME`、`R_LIBS_USER` 指向已有安装，不将个人路径写入源码。逐步检查和准备本地环境的 AI 智能体指令见[中文 README](../README.zh-CN.md#让-ai-智能体协助复现)。
+按 **1 → 4 → 2** 的顺序复算保存结果并重绘图件。[AI 智能体指令](../README.zh-CN.md#让-ai-智能体协助复现)用于逐步准备本地环境。
 
-先运行模式 1 查看主流程复算，再用模式 4 查看补充模型及受控探针。模式 2 从保存的源表重绘图件，所有输出均在新目录中。模式 3 才会接续优化，本次项目整理未执行模式 3。
+Python 依赖见 `requirements.txt`。R 需要四个绘图包和 Cairo；通过 `PATH` 或 `R_HOME` 查找 Rscript，通过会话级 `R_LIBS_USER` 暴露已有用户库。模式 3 接续优化；模式 4 重放 34 组全数据模型与受控探针。留出、扰动和匹配预算结果以汇总表提供。
 
-模式 4 可重放 34 组全数据模型及固定外部框架探针；留出和扰动表仅为已保存记录。复算误差用于检查实现一致性，不是新实验、物理真实性检验或置信区间。图像的细网格也不提高实验分辨率。
+各模式写入独立输出目录。复核电流差异、固定参数、分布统计量和图件；报告峰位取自原有 0.025 eV 网格。

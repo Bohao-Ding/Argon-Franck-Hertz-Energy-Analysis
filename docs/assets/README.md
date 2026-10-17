@@ -1,15 +1,15 @@
 # Preview assets and provenance
 
-All three graphics are drawn by `figures/plot_project.R` using R/ggplot2 and patchwork. Run menu mode 2 to recreate them in a fresh output directory. PNG files have a white background and width 1920 pixels; SVG files retain editable text. The committed previews are copied from reviewed exports, not regenerated during ordinary replay.
+`figures/plot_project.R` draws the three graphics with R/ggplot2 and patchwork. Mode 2 exports them to a fresh output directory as 1920-pixel-wide PNG and editable-text SVG files.
 
-| Graphic | Source tables under `reference/` | Visual claim and limits |
+| Graphic | Sources under `reference/` | Content |
 | --- | --- | --- |
-| `project_overview` | `tables/current_fits.csv`, `density_stages.csv`, `final_coefficients.csv`, `spectrum_reference.csv` | Measured curves and saved continuous predictions beside a peak-region enlargement. The spline support remains 9–16 eV; the small high-energy tail is outside this view. Spectroscopic markers are a comparison after fitting. |
-| `response_contrasts` | `discrete_diagnostics/probe_contrasts.csv` | The wide-domain discrete-scan H1 framework is frozen. Four prescribed points are compared with one point at equal mean, then with a uniform density at equal mean and SD. The two vertical scales differ by four orders of magnitude. |
-| `broadening_tradeoff` | `discrete_diagnostics/profile_scores.csv` | Full-data fixed-SD candidates show internal/external width compensation. The shared zero-variance H1 reference is plotted for each family; infeasible candidates have no fitted point. These are computational settings, not experimental replicates. |
+| `project_overview` | `tables/`: `current_fits.csv`, `density_stages.csv`, `final_coefficients.csv`, `spectrum_reference.csv` | Four measured curves and saved continuous predictions, beside a peak-region view. The density support is 9–16 eV; dashed markers show spectroscopic references. |
+| `response_contrasts` | `discrete_diagnostics/probe_contrasts.csv` | Frozen wide-domain H1 framework. Four points versus one point share the mean; four points versus uniform share mean and variance. The current scales differ by four orders of magnitude. |
+| `broadening_tradeoff` | `discrete_diagnostics/profile_scores.csv` | Full-data fixed-SD fits, with the shared zero-variance reference plotted for each family. Response variance decreases as prescribed energy variance increases. |
 
-The overview evaluates the saved cubic spline on a finer drawing grid without refitting. Its reported mode remains defined on the original 0.025 eV calculation grid. Probe lines connect the original 0.5 V samples. No uncertainty bars, significance labels, or instrument-detection claims are introduced.
+The overview evaluates the saved spline on a finer drawing grid. Reported peak energy uses the original 0.025 eV grid; probe lines connect the original 0.5 V samples. The committed previews are reviewed copies of these exports.
 
 ## 中文
 
-三幅图均由同一 R 脚本读取保存的源表绘制，导出 PNG/SVG。概览图只放大分布峰区；响应差异图使用不同纵轴数量级；展宽补偿图表示计算设置之间的关系。图中没有新增测量、拟合或实验不确定度估计。
+三幅图由同一 R 脚本读取保存的源表生成。概览图放大分布峰区；响应差异图分别比较展宽和谱形；展宽补偿图展示全数据固定方差拟合。PNG/SVG 预览图由复核后的导出文件更新。

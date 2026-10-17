@@ -8,11 +8,11 @@ A reproducible model of collector-current response in the argon Franck–Hertz e
 
 ![Four measured current curves and their saved continuous-distribution predictions, beside the fitted effective-energy peak and four spectroscopic reference markers.](docs/assets/project_overview.png)
 
-The current fit uses **644 archived points at retarding voltages 0, 4, 6, and 8 V**. The density panel enlarges the peak region of a distribution supported on 9–16 eV. Its mean is about 11.640 eV. This is a model-conditional effective contribution to current response, not a measured atomic spectrum or state population.
+The current fit uses **644 archived points at retarding voltages 0, 4, 6, and 8 V**. The density panel enlarges the peak region of a distribution supported on 9–16 eV. Its mean is about 11.640 eV. The fitted density describes effective excitation contributions in the current-response model.
 
 ## Quick start
 
-Use an existing Python environment containing the packages in [requirements.txt](requirements.txt). Run:
+Use a Python environment with the packages in [requirements.txt](requirements.txt), then run:
 
 ```text
 python run.py
@@ -26,42 +26,28 @@ python run.py
 | **4** | Replay 34 discrete/fixed-variance full-data models and fixed-framework response probes. | No |
 | **0** | Exit. | No |
 
-Start with mode 1, then explore mode 4. Every selection writes a fresh `outputs/<timestamp>_<mode>/` directory. Inputs and saved references stay intact. Numerical modes use one CPU thread and float64; CUDA is not required. The menu does not install packages or download data.
+Run modes 1, 4, and 2 to replay the results and redraw the figures. Each selection writes to `outputs/<timestamp>_<mode>/`. Numerical modes use one CPU thread and float64.
 
 For R discovery, package checks, output filenames, and fitting details, see [Reproduction](docs/reproduction.md).
 
 ## Reproduce with an AI agent
 
-Open this repository in a local AI coding agent and copy the instruction below. It guides the agent through inspecting your machine, preparing a compatible environment, and checking the saved results.
+Open this repository in a local AI coding agent and copy this instruction:
 
 ```text
-Help me reproduce this repository locally, adapting each step to this machine.
+Reproduce this repository on this machine.
 
-1. Read README.md, docs/reproduction.md, and requirements.txt. Inspect the OS,
-   available Python interpreters/environments, and installed package versions.
-   Check Rscript, its visible R libraries, Cairo, and fonts separately.
-2. Report the available environment and the minimal configuration needed.
-   Reuse a compatible environment first. If a new environment is necessary,
-   use an isolated project-local environment and leave global dependencies
-   intact. Prepare only missing dependencies within the current authorization;
-   do not replace an existing environment or install CUDA for this CPU workflow.
-3. Use the selected Python interpreter to run run.py and choose mode 1.
-   Inspect replay_checks.json and the distribution summaries. Compare the
-   recalculated currents with the saved values and explain any discrepancy.
-4. Choose mode 4 to replay the 34 full-data models and fixed-framework probes.
-   Inspect current/probe differences and unchanged parameters. Fold and
-   perturbation tables are saved records; this mode does not rerun their fits.
-5. Prepare R for mode 2, reusing an existing installation first. Add missing
-   R components or packages within the current authorization. Make Rscript
-   and its packages visible to the same process, using session configuration
-   where appropriate. Redraw and inspect the figures. If setup is blocked,
-   report the blocker and retain the completed Python replay results.
-6. Keep measured data, saved references, and source files unchanged. Use fresh
-   output directories. Run mode 3 only if I explicitly request a new fit and
-   we have agreed on its computational budget.
-7. Report interpreter/package versions, configuration changes, modes actually
-   run, output locations, and replay differences. Distinguish parameter replay,
-   figure redrawing, and fitting; none supplies new independent measurements.
+1. Read README.md, docs/reproduction.md, and requirements.txt. Report the OS,
+   Python/R installations, available environments, and package versions.
+2. Reuse a compatible environment or prepare an isolated project environment.
+   Add the required Python packages and R plotting tools. Configure Rscript,
+   R libraries, Cairo, and fonts for the process that will run the figures.
+3. Use the selected Python interpreter to run run.py: modes 1, 4, then 2.
+   For a requested refit, agree on its computational budget and use mode 3.
+4. Inspect replay_checks.json, current/probe differences, distribution summaries,
+   and exported figures. Report completed steps and any environment blockers.
+5. Treat data/ and reference/ as inputs and write results under outputs/.
+   Summarize environment changes, versions, executed modes, and output paths.
 ```
 
 ## Model design
@@ -74,9 +60,9 @@ The same current-response framework accepts a single effective energy, weighted 
 
 ![Fixed-framework current differences: four prescribed energies versus one energy at equal mean, and four energies versus a uniform density at equal mean and variance. The vertical scales differ by four orders of magnitude.](docs/assets/response_contrasts.png)
 
-These are prescribed probes under the same frozen response, not recovered atomic levels. Adding energy spread changes the predicted current more than changing shape at the same mean and variance. The two panels use different scales; neither defines an instrument detection threshold.
+The left comparison adds energy spread at a common mean; the right changes distribution shape at a common mean and variance. Both use the same frozen external response. The vertical scales differ by four orders of magnitude.
 
-The curated [discrete diagnostics](docs/discrete_diagnostics.md) include K=1–8 scans, matched-budget H1 controls, fixed-variance profiles, and the recorded optimization statuses. The current archive and protocol provide **no stable predictive support for resolving a discrete-level count**. Narrow support is a strong prior, and paths still improving at their budget remain labelled not yet stable.
+Alongside the saved spline-fit path, the [discrete diagnostics](docs/discrete_diagnostics.md) compare K=1–8, matched-budget H1 controls, and prescribed variances. The fixed-variance scan selects zero variance in both full datasets. **The discrete-level count remains unresolved** in this dataset and response model. Path statuses and support domains accompany the results.
 
 ## Repository map
 
@@ -90,8 +76,6 @@ The curated [discrete diagnostics](docs/discrete_diagnostics.md) include K=1–8
 
 The [historical specified-four-energy comparison](docs/optional_h4s.md) belongs to an earlier five-curve periodic model and is kept separate from the present convolution analysis.
 
-## Interpretation and license
+## License
 
-Internal holdouts, optimizer starts, and residual perturbations reuse one experimental archive. They are not independent experiments or calibrated confidence intervals. A fitted effective distribution does not measure atomic populations; lack of resolved components does not establish that real atomic levels are absent.
-
-Source code is distributed under the [MIT license](LICENSE). This repository contains implementation, data, design explanations, and computational records.
+Source code is distributed under the [MIT license](LICENSE).

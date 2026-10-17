@@ -798,7 +798,7 @@
 <text transform='translate(516.26,158.44) rotate(-90)' style='font-size: 15.00px;fill: #26343D; font-family: "Arial";' textLength='5.00px' lengthAdjust='spacingAndGlyphs'>)</text>
 <text x='535.64' y='85.02' style='font-size: 10.50px;fill: #52626D; font-family: "Arial";' textLength='255.81px' lengthAdjust='spacingAndGlyphs'>Dashed: Ar 4s reference energies; full support 9–16 eV</text>
 <text x='535.64' y='68.58' style='font-size: 14.00px; font-weight: bold;fill: #183544; font-family: "Arial";' textLength='226.27px' lengthAdjust='spacingAndGlyphs'>Effective distribution: peak region</text>
-<text x='19.93' y='383.93' style='font-size: 10.00px;fill: #52626D; font-family: "Arial";' textLength='471.78px' lengthAdjust='spacingAndGlyphs'>The fitted density describes effective current-response contributions. It is not a measured atomic spectrum.</text>
+<text x='19.93' y='383.93' style='font-size: 10.00px;fill: #52626D; font-family: "Arial";' textLength='459.58px' lengthAdjust='spacingAndGlyphs'>The density describes effective excitation contributions; dashed lines mark the Ar 4s reference energies.</text>
 <text x='19.93' y='38.42' style='font-size: 10.50px;fill: #52626D; font-family: "Arial";' textLength='417.52px' lengthAdjust='spacingAndGlyphs'>Four retarding conditions · 644 archived points · one shared collision-response framework</text>
 <text x='19.93' y='21.98' style='font-size: 14.00px; font-weight: bold;fill: #183544; font-family: "Arial";' textLength='405.14px' lengthAdjust='spacingAndGlyphs'>From measured current to an effective excitation distribution</text>
 </g>

@@ -196,7 +196,7 @@
 <text x='504.13' y='338.01' style='font-size: 9.60px; font-family: "Arial";' textLength='66.59px' lengthAdjust='spacingAndGlyphs'>Uniform density</text>
 <text x='49.28' y='38.42' style='font-size: 10.50px;fill: #52626D; font-family: "Arial";' textLength='291.95px' lengthAdjust='spacingAndGlyphs'>Full-data fixed-SD settings; the narrow support is a strong prior</text>
 <text x='49.28' y='21.98' style='font-size: 14.00px; font-weight: bold;fill: #183544; font-family: "Arial";' textLength='415.28px' lengthAdjust='spacingAndGlyphs'>Internal energy spread can trade against response broadening</text>
-<text x='49.28' y='362.33' style='font-size: 10.00px;fill: #52626D; font-family: "Arial";' textLength='502.62px' lengthAdjust='spacingAndGlyphs'>Points are fitted settings, not independent measurements. All paths retain their fixed-budget, not-yet-stable status.</text>
+<text x='49.28' y='362.33' style='font-size: 10.00px;fill: #52626D; font-family: "Arial";' textLength='398.02px' lengthAdjust='spacingAndGlyphs'>Full-data fits at prescribed SD; training objectives were still improving at the fixed budgets.</text>
 </g>
 </g>
 </svg>

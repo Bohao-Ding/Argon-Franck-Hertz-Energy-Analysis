@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
-# Web figures from saved tables; no fitting, simulation or new observations.
-# Quantitative panels: current/distribution overview, moment-matched probes,
+# Web figures from saved tables.
+# Quantitative panels: current/distribution overview, controlled probes,
 # and compensation between fitted widths. PNG/SVG, 12-inch web layout.
 library(ggplot2)
 library(patchwork)
@@ -62,7 +62,7 @@ p_density <- ggplot(fine_density, aes(energy_eV, density_per_eV)) +
 overview <- p_current + p_density + plot_layout(widths = c(1.45, 1)) + plot_annotation(
   title = "From measured current to an effective excitation distribution",
   subtitle = "Four retarding conditions \u00b7 644 archived points \u00b7 one shared collision-response framework",
-  caption = "The fitted density describes effective current-response contributions. It is not a measured atomic spectrum.")
+  caption = "The density describes effective excitation contributions; dashed lines mark the Ar 4s reference energies.")
 save_web(overview, "project_overview", 5.5)
 
 probes <- subset(read_table("discrete_diagnostics", "probe_contrasts.csv"), domain == "wide" & framework == "H1")
@@ -84,7 +84,7 @@ p_shape <- probe_plot("same_variance_H4_vs_uniform", 1e-7,
 contrasts <- p_spread + p_shape + plot_layout(guides = "collect") + plot_annotation(
   title = "Energy spread and discrete structure leave different response scales",
   subtitle = "Prescribed SD = 0.10 eV \u00b7 external parameters frozen to the discrete-scan H1 fit",
-  caption = "The four points are diagnostic inputs. The two vertical scales differ; neither is an instrument detection threshold.") &
+  caption = "Prescribed excitation distributions on the original 0.5 V grid. The panels use different current scales.") &
   theme(legend.position = "bottom")
 save_web(contrasts, "response_contrasts", 5.4)
 
@@ -108,7 +108,7 @@ tradeoff <- ggplot(expanded, aes(sd_eV^2, response_sd_V^2, colour = family, line
   labs(x = expression(Internal~energy~variance~(eV^2)), y = expression(Response~variance~(V^2)),
        title = "Internal energy spread can trade against response broadening",
        subtitle = "Full-data fixed-SD settings; the narrow support is a strong prior",
-       caption = "Points are fitted settings, not independent measurements. All paths retain their fixed-budget, not-yet-stable status.") +
+       caption = "Full-data fits at prescribed SD; training objectives were still improving at the fixed budgets.") +
   theme(strip.text = element_text(face = "bold", colour = "#26343D", size = 12))
 save_web(tradeoff, "broadening_tradeoff", 5.2)
 cat("Exported three project figures as PNG and SVG.\n")
