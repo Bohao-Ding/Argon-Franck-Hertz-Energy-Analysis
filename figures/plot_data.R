@@ -49,7 +49,7 @@ p_selection <- ggplot() +
   geom_segment(data=mesh,aes(x=6.5,xend=6.5,y=y,yend=y+.19),colour="#434A4F",linewidth=.5) +
   annotate("segment",x=9.2,xend=9.2,y=2.55,yend=5.3,colour="#434A4F",linewidth=.75,lineend="round") +
   geom_point(data=atoms,aes(x,y),size=4.2,shape=21,fill="#EEE5D9",colour="#AD8251",stroke=.35) +
-  geom_text(data=atoms,aes(x,y,label=label),size=2.6,family="Arial",colour="#55432E") +
+  geom_text(data=atoms,aes(x,y,label=label),size=3,family="Arial",colour="#55432E") +
   annotate("text",x=1.4,y=6.35,label="C\nHeated cathode",size=3,family="Arial",lineheight=.95) +
   annotate("text",x=6.5,y=6.35,label="G\nAccelerating grid",size=3,family="Arial",lineheight=.95) +
   annotate("text",x=9.2,y=6.35,label="A\nCollector",size=3,family="Arial",lineheight=.95) +
