@@ -34,7 +34,7 @@ p_raw <- ggplot(observed, aes(Va, observed_uA, colour = condition, linetype = co
                         labels = c("0 V", "4 V", "6 V", "8 V", "10 V")) +
   scale_x_continuous(sec.axis = dup_axis(name = NULL, labels = NULL)) +
   scale_y_continuous(sec.axis = dup_axis(name = NULL, labels = NULL)) +
-  labs(x = "Accelerating voltage (V)", y = "Current (\u03bcA)", title = "One archived dataset") +
+  labs(x = "Accelerating voltage (V)", y = "Current (\u03bcA)", title = "measured data") +
   theme(panel.border = element_rect(fill = NA, linewidth = .3), axis.line = element_blank())
 # Functional mechanism diagram: no claim about actual tube geometry.
 mesh <- data.frame(y=seq(2.3,5.35,by=.38))
