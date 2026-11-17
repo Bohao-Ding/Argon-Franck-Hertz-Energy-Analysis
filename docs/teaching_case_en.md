@@ -1,8 +1,25 @@
-# From excitation hypotheses to an effective excitation energy distribution
+# Testing excitation hypotheses with argon Franck–Hertz curves
 
-The core activity uses atomic excitation, retarding fields, probability
-densities, and numerical integration. Convolutions and refitting are advanced
-extensions. See [model design](design.md) for the shared response and assumptions.
+This activity follows a conventional Franck–Hertz experiment in an upper-level
+undergraduate laboratory. Students use the archived current curves and saved
+comparisons. [Model design](design.md) explains the current response; convolution
+and refitting can be used as extensions.
+
+| Step | What students do | What students report |
+| --- | --- | --- |
+| 1. Establish a single-energy baseline | Mark successive extrema in the measured curves and compare the spacing estimate with the saved H1 fit. | The characteristic excitation scale is about 11.64 eV. |
+| 2. Describe the continuous fit | Compare the initial and final densities and locate the final main peak at half height. | The fitted interval is about 11.538–11.735 eV under this representation. Much of the width was present at initialisation. |
+| 3. Test a prescribed four-position pattern | Use the saved fixed-framework probes. Compare four points with a same-mean single point, then compare four points with two points at the same mean and variance. | Record which current differences are shared by the dispersed candidates and which depend on their shape. |
+| 4. Assess resolution | Inspect the saved component-count scans and compare fits across the two allowed energy intervals. | Explain how merging components and changes with the allowed interval limit the inference of individual energies. Propose an additional measurement for one ambiguity. |
+
+Steps 3 and 4 use the [public discrete diagnostics](discrete_diagnostics.md) on
+the original archive. The four-point probes are prescribed comparison patterns;
+their spacings are set by the probe design. The four tabulated argon reference
+energies are available for a separate comparison with the fitted interval. All
+core activities can use saved results. [Reproduction](reproduction.md) explains
+replay and the optional fitting workflow.
+
+## Supporting exercises
 
 ## 1. Predict a current signature
 

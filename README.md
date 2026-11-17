@@ -54,7 +54,7 @@ Reproduce this repository on this machine.
 
 The same current-response framework accepts a single effective energy, weighted discrete energies, or a normalized continuous density. Independent successive collisions are combined through convolution powers, followed by one unit-area Gaussian response and the common current readout.
 
-[Design and data flow](docs/design.md) explains what is shared, what changes between representations, and how energy variance can compensate for response broadening. The [classroom activities](docs/teaching_case_en.md) connect these choices to excitation, collection, and convolution.
+[Design and data flow](docs/design.md) explains what is shared, what changes between representations, and how energy variance can compensate for response broadening. The [classroom activities](docs/teaching_case_en.md) guide students from the single-energy baseline and fitted interval to fixed-response comparisons and the resolution of individual energies.
 
 ## What can the curves distinguish?
 
