@@ -12,24 +12,31 @@ PYTHON_PACKAGES = ("numpy", "pandas", "scipy", "torch", "openpyxl")
 
 
 def main() -> int:
-    print("Argon Franck-Hertz Energy Analysis")
-    print("1. Replay saved parameters and calculate distribution summaries")
-    print("2. Render saved-result and project figures with R/ggplot2")
-    print("3. Continue the adopted fitting sequence from the saved H1 starting parameters")
-    print("4. Replay discrete diagnostics and fixed-framework probes; no optimization")
-    print("0. Exit")
-    while True:
-        try:
-            choice = input("Choose a mode [0-4]: ").strip()
-        except EOFError:
-            return 0
-        if choice in ("0", "1", "2", "3", "4"):
-            break
-        print("Enter 0, 1, 2, 3, or 4.")
+    if sys.argv[1:] == ["affine"]:
+        choice = "5"
+    elif sys.argv[1:]:
+        print("Usage: python run.py [affine]")
+        return 2
+    else:
+        print("Argon Franck-Hertz Energy Analysis")
+        print("1. Replay saved parameters and calculate distribution summaries")
+        print("2. Render saved-result and project figures with R/ggplot2")
+        print("3. Continue the adopted fitting sequence from the saved H1 starting parameters")
+        print("4. Replay discrete diagnostics and fixed-framework probes; no optimization")
+        print("5. Replay the local affine excitation comparison; no optimization")
+        print("0. Exit")
+        while True:
+            try:
+                choice = input("Choose a mode [0-5]: ").strip()
+            except EOFError:
+                return 0
+            if choice in ("0", "1", "2", "3", "4", "5"):
+                break
+            print("Enter 0, 1, 2, 3, 4, or 5.")
     if choice == "0":
         return 0
 
-    if choice in ("1", "3", "4"):
+    if choice in ("1", "3", "4", "5"):
         missing = [name for name in PYTHON_PACKAGES if find_spec(name) is None]
         if missing:
             print("Missing Python packages: " + ", ".join(missing))
@@ -37,7 +44,10 @@ def main() -> int:
             return 1
         for name in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"):
             os.environ[name] = "1"
-        if choice == "4":
+        if choice == "5":
+            from fh_argon.affine import replay_affine
+            action = replay_affine
+        elif choice == "4":
             from fh_argon.diagnostics import replay_diagnostics
             action = replay_diagnostics
         else:
@@ -47,7 +57,7 @@ def main() -> int:
         from fh_argon.plotting import PlottingError, render
         action = render
 
-    mode = {"1": "replay", "2": "figures", "3": "refit", "4": "diagnostics"}[choice]
+    mode = {"1": "replay", "2": "figures", "3": "refit", "4": "diagnostics", "5": "affine"}[choice]
     output = ROOT / "outputs" / f"{datetime.now():%Y%m%d_%H%M%S_%f}_{mode}"
     print("Output: " + output.relative_to(ROOT).as_posix())
     if choice == "2":

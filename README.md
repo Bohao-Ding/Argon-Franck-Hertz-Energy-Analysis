@@ -12,7 +12,22 @@ The current fit uses **644 archived points at retarding voltages 0, 4, 6, and 8 
 
 ## Quick start
 
-Use a Python environment with the packages in [requirements.txt](requirements.txt), then run:
+For the five-scan affine comparison, run `python run.py affine`. It uses the
+805 local measurements and the archived H1 response, and evaluates 242 shared
+energy shifts and spacing scales on one CPU thread. It requires neither R nor a
+new fit. Results are written to `outputs/<timestamp>_affine/`.
+
+This comparison tests an effective energy-axis adjustment motivated by
+instrument response. The four positions retain their order and spacing ratios.
+Every setting includes a same-mean single-energy control and a two-energy
+control with matching mean and variance. With a shift of −0.03 eV and a scale
+of 0.95 selected on 0, 4 and 6 V, the 8 V valley-to-valley amplitude and phase
+RSS fall by 3.741% and 0.131% for the four-position pattern. The two-energy
+control gives 3.728% and 0.158%. The 8 V peak-to-peak amplitude error increases
+by 7.444%. See [the protocol and checks](docs/reproduction.md#local-affine-comparison).
+
+For the interactive menu, use a Python environment with the packages in
+[requirements.txt](requirements.txt), then run:
 
 ```text
 python run.py
@@ -24,9 +39,10 @@ python run.py
 | **2** | Redraw saved-result figures and the three project graphics with R/ggplot2. | No |
 | **3** | Continue the adopted alternating fit from the saved H1 starting parameters. | **Yes** |
 | **4** | Replay 34 discrete/fixed-variance full-data models and fixed-framework response probes. | No |
+| **5** | Replay the local affine excitation comparison. | No |
 | **0** | Exit. | No |
 
-Run modes 1, 4, and 2 to replay the results and redraw the figures. Each selection writes to `outputs/<timestamp>_<mode>/`. Numerical modes use one CPU thread and float64.
+Run modes 1, 4, and 2 for the archived fits, diagnostics and figures. Use mode 5 for the five-scan comparison. Each selection writes to `outputs/<timestamp>_<mode>/`. Numerical modes use one CPU thread and float64.
 
 For R discovery, package checks, output filenames, and fitting details, see [Reproduction](docs/reproduction.md).
 

@@ -19,6 +19,16 @@ energies are available for a separate comparison with the fitted interval. All
 core activities can use saved results. [Reproduction](reproduction.md) explains
 replay and the optional fitting workflow.
 
+## Five-scan worked comparison
+
+Run [the affine comparison](reproduction.md#local-affine-comparison) for an
+alternative to the archived probes in step 3. Use the shared setting in
+`summary.json` to compare the same four-position and two-energy predictions
+across scans. At 8 V, compare valley-to-valley scores with peak-to-peak scores
+and the full-current result. Use the 4, 6 and 10 V phase scores to discuss
+whether the amplitude improvement transfers. At 0 V use the full-current
+score, since the supported common harmonic features are absent.
+
 ## Supporting exercises
 
 ## 1. Predict a current signature
